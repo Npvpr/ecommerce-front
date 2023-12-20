@@ -52,8 +52,8 @@ export default async function handler(req,res) {
     line_items,
     mode: 'payment',
     customer_email: email,
-    success_url: 'https://ecommerce-front-ecru.vercel.app//cart?success=1',
-    cancel_url: 'https://ecommerce-front-ecru.vercel.app//cart?canceled=1',
+    success_url: 'https://ecommerce-front-npvpr.vercel.app//cart?success=1',
+    cancel_url: 'https://ecommerce-front-npvpr.vercel.app//cart?canceled=1',
     metadata: {orderId:orderDoc._id.toString()},
     allow_promotion_codes: true,
     shipping_options: [
