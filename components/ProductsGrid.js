@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProductBox from "@/components/ProductBox";
-import {RevealWrapper} from 'next-reveal'
+import { RevealWrapper } from "next-reveal";
+import Footer from "@/components/Footer";
 
 const StyledProductsGrid = styled.div`
   display: grid;
@@ -11,15 +12,21 @@ const StyledProductsGrid = styled.div`
   }
 `;
 
-export default function ProductsGrid({products,wishedProducts=[]}) {
+export default function ProductsGrid({ products, wishedProducts = [] }) {
   return (
-    <StyledProductsGrid interval={100}>
-      {products?.length > 0 && products.map((product,index) => (
-        <RevealWrapper key={product._id} delay={index*50}>
-          <ProductBox {...product}
-                      wished={wishedProducts.includes(product._id)} />
-        </RevealWrapper>
-      ))}
-    </StyledProductsGrid>
+    <>
+      <StyledProductsGrid interval={100}>
+        {products?.length > 0 &&
+          products.map((product, index) => (
+            <RevealWrapper key={product._id} delay={index * 50}>
+              <ProductBox
+                {...product}
+                wished={wishedProducts.includes(product._id)}
+              />
+            </RevealWrapper>
+          ))}
+      </StyledProductsGrid>
+      <Footer />
+    </>
   );
 }
